@@ -1,6 +1,14 @@
 let humanScore = 0
 let computerScore = 0
 
+const playButton = document.querySelector ("#playButton")   
+const log = document.querySelector("log")
+
+playButton.addEventListener ("click", () => {
+    let choice = prompt("What is your choice? Rock, paper, or scissors?");
+}
+)
+
 //Get the computer choices
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -10,12 +18,11 @@ function getComputerChoice() {
 
 //Get the human choices
 function getHumanChoice() {
-    const message = 'Enter "rock", "paper", or "scissors"';
-    const input = prompt(message);
+    const input = prompt("Rock, paper, or scissors?");
     return input;
 }
 
-function playRound () {
+function playRound (humanChoice, computerChoice) {
     const human = getHumanChoice();
     if (human === null) {
     console.log('No input from user.');
